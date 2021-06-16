@@ -18,7 +18,7 @@ def openchat(context: telegram.ext.CallbackContext):
                                                      can_change_info=None, can_invite_users=True,
                                                      can_pin_messages=None))
     context.bot.send_message("-1001258717612", "Dear Students,\n\n"
-                                               "The chat is open for your messages.\n\n "
+                                               "💬 The chat is open for your messages.\n\n "
                                                "Have a productive week!")
     print("Found match: Monday 8am, opening chat...")
 
@@ -32,9 +32,10 @@ def closechat(context: telegram.ext.CallbackContext):
                                                      can_pin_messages=None))
     context.bot.send_message("-1001258717612", "Dear Students,\n\n"
                                                "As usual, on weekend, messaging to our chat is restricted. We will "
-                                               "resume messaging again on Monday morning.\n\n "
-                                               "If you have any questions, please check pinned messages above and use "
-                                               "search, most likely, these questions have been already answered. \n\n"
+                                               "resume messaging again on Monday morning.\n\n"
+                                               "❔ If you have any questions, please check pinned messages above and "
+                                               "use "
+                                               "search, most likely, these questions have been already answered.\n\n"
                                                "Have a great weekend!")
     print("Found match: Friday 6pm, closing chat...")
 
@@ -43,13 +44,13 @@ def check_date_and_time(context: telegram.ext.CallbackContext):
     thetime = datetime.datetime.now()
     print("Check called - hour now is: {} day num is: {}".format(thetime.hour, thetime.weekday()))
 
-    if thetime.weekday() == 2 and thetime.hour == 17:
+    if thetime.weekday() == 4 and thetime.hour == 17:
         closechat(context)
     elif thetime.weekday() == 0 and thetime.hour == 8:
         openchat(context)
 
 
-j.run_repeating(check_date_and_time, 5)
+j.run_repeating(check_date_and_time, 3600)
 
 u.start_polling()
 u.idle()
