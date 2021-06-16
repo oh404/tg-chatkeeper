@@ -17,7 +17,9 @@ def openchat(context: telegram.ext.CallbackContext):
                                                      can_add_web_page_previews=True,
                                                      can_change_info=None, can_invite_users=True,
                                                      can_pin_messages=None))
-    context.bot.send_message("-1001258717612", "Monday morning. Chat OPEN")
+    context.bot.send_message("-1001258717612", "Dear Students,\n\n"
+                                               "The chat is open for your messages.\n\n "
+                                               "Have a productive week!")
     print("Found match: Monday 8am, opening chat...")
 
 
@@ -28,7 +30,12 @@ def closechat(context: telegram.ext.CallbackContext):
                                                      can_add_web_page_previews=None,
                                                      can_change_info=None, can_invite_users=True,
                                                      can_pin_messages=None))
-    context.bot.send_message("-1001258717612", "Friday evening. Chat CLOSED")
+    context.bot.send_message("-1001258717612", "Dear Students,\n\n"
+                                               "As usual, on weekend, messaging to our chat is restricted. We will "
+                                               "resume messaging again on Monday morning.\n\n "
+                                               "If you have any questions, please check pinned messages above and use "
+                                               "search, most likely, these questions have been already answered. \n\n"
+                                               "Have a great weekend!")
     print("Found match: Friday 6pm, closing chat...")
 
 
