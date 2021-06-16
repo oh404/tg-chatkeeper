@@ -51,6 +51,7 @@ def check_date_and_time(context: telegram.ext.CallbackContext):
 
 
 j.run_repeating(check_date_and_time, 3600)
+print("done")
 
 u.start_polling()
 u.idle()
